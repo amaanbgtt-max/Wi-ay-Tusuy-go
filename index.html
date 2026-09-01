@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wiñay Tusuy 🇵🇪</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">WIÑAY TUSUY 🇵🇪</div>
+    <div class="subtitle">
+        Danzas que perduran, raíces que viven
+    </div>
+</header>
+
+<nav class="nav">
+    <button onclick="showScreen('home')">🏠 Inicio</button>
+    <button onclick="showScreen('regions')">🗺️ Regiones</button>
+    <button onclick="showScreen('dances')">💃 Danzas</button>
+    <button onclick="showScreen('search')">🔎 Buscar</button>
+</nav>
+
+
+<!-- ================= INICIO ================= -->
+
+<section id="home" class="screen active">
+
+    <div class="container">
+
+        <div class="hero">
+
+            <h1>Bienvenido a Wiñay Tusuy</h1>
+
+            <p>
+                Descubre la riqueza cultural del Perú a través
+                de sus danzas tradicionales.
+            </p>
+
+            <button class="primary"
+                    onclick="showScreen('regions')">
+                🗺️ Explorar regiones
+            </button>
+
+        </div>
+
+
+        <div class="solia">
+
+            <div class="avatar">👩🏽</div>
+
+            <div>
+                <h3>Hola, soy SOLIA</h3>
+
+                <p>
+                    Te acompañaré a conocer las danzas
+                    tradicionales de las diferentes regiones
+                    del Perú.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="hero">
+
+            <h2>¿Qué puedes encontrar?</h2>
+
+        </div>
+
+
+        <div class="grid">
+
+            <div class="card simple-card">
+                <h3>🗺️ Regiones</h3>
+                <p>
+                    Explora las 25 regiones del Perú.
+                </p>
+            </div>
+
+            <div class="card simple-card">
+                <h3>💃 Danzas</h3>
+                <p>
+                    Conoce diferentes danzas tradicionales.
+                </p>
+            </div>
+
+            <div class="card simple-card">
+                <h3>📜 Historia</h3>
+                <p>
+                    Aprende sobre sus orígenes y evolución.
+                </p>
+            </div>
+
+            <div class="card simple-card">
+                <h3>🎭 Cultura</h3>
+                <p>
+                    Descubre nuestras tradiciones.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REGIONES ================= -->
+
+<section id="regions" class="screen">
+
+    <div class="container">
+
+        <button class="back"
+                onclick="showScreen('home')">
+            ← Volver al inicio
+        </button>
+
+        <div class="hero">
+
+            <h1>🗺️ Regiones del Perú</h1>
+
+            <p>
+                Selecciona una región para conocer
+                sus danzas tradicionales.
+            </p>
+
+        </div>
+
+        <div id="regionMap" class="map"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DANZAS DE REGIÓN ================= -->
+
+<section id="regionDances" class="screen">
+
+    <div class="container">
+
+        <button class="back"
+                onclick="showScreen('regions')">
+            ← Volver a regiones
+        </button>
+
+        <div class="hero">
+
+            <h1 id="regionTitle"></h1>
+
+            <p id="regionDescription"></p>
+
+        </div>
+
+        <div id="regionDanceGrid"
+             class="grid">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TODAS LAS DANZAS ================= -->
+
+<section id="dances" class="screen">
+
+    <div class="container">
+
+        <button class="back"
+                onclick="showScreen('home')">
+            ← Volver al inicio
+        </button>
+
+        <div class="hero">
+
+            <h1>💃 Danzas tradicionales</h1>
+
+            <p>
+                Selecciona una danza para conocer
+                toda su información.
+            </p>
+
+        </div>
+
+        <div id="allDanceGrid"
+             class="grid">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DETALLE ================= -->
+
+<section id="detail" class="screen">
+
+    <div class="container">
+
+        <button class="back"
+                id="detailBack">
+            ← Volver
+        </button>
+
+
+        <div class="detail">
+
+            <div class="detail-top">
+
+                <img id="detailImage"
+                     class="detail-img"
+                     alt="Danza peruana">
+
+
+                <div class="detail-title">
+
+                    <span id="detailRegion"
+                          class="tag">
+                    </span>
+
+                    <h1 id="detailName"></h1>
+
+                    <p id="detailShort"></p>
+
+                </div>
+
+            </div>
+
+
+            <div class="info">
+
+                <div class="info-section">
+                    <h2>📜 Historia</h2>
+                    <p id="detailHistory"></p>
+                </div>
+
+
+                <div class="info-section">
+                    <h2>🌎 Origen</h2>
+                    <p id="detailOrigin"></p>
+                </div>
+
+
+                <div class="info-section">
+                    <h2>💃 Características</h2>
+                    <p id="detailCharacteristics"></p>
+                </div>
+
+
+                <div class="info-section">
+                    <h2>👕 Vestimenta</h2>
+                    <p id="detailClothing"></p>
+                </div>
+
+
+                <div class="info-section">
+                    <h2>🥁 Música e instrumentos</h2>
+                    <p id="detailMusic"></p>
+                </div>
+
+
+                <div class="info-section">
+                    <h2>🎭 Personajes</h2>
+                    <p id="detailCharacters"></p>
+                </div>
+
+
+                <div class="info-section">
+                    <h2>🎉 Festividades</h2>
+                    <p id="detailFestivals"></p>
+                </div>
+
+
+                <div class="info-section">
+                    <h2>🏛️ Importancia cultural</h2>
+                    <p id="detailImportance"></p>
+                </div>
+
+
+                <div class="fact-box">
+
+                    <strong>
+                        💡 Dato interesante:
+                    </strong>
+
+                    <p id="detailFact"></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <br>
+
+        <button class="primary"
+                onclick="showScreen('dances')">
+            💃 Ver todas las danzas
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BUSCADOR ================= -->
+
+<section id="search" class="screen">
+
+    <div class="container">
+
+        <button class="back"
+                onclick="showScreen('home')">
+            ← Volver al inicio
+        </button>
+
+        <div class="hero">
+
+            <h1>🔎 Buscar una danza</h1>
+
+            <p>
+                Escribe el nombre de una danza o región.
+            </p>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Ejemplo: Diablada, Puno, Tondero..."
+            >
+
+        </div>
+
+
+        <div id="searchResults"
+             class="grid">
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        🇵🇪 Wiñay Tusuy —
+        Danzas que perduran, raíces que viven
+    </p>
+
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>

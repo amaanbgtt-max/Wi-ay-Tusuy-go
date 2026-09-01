@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wiñay Tusuy 🇵🇪</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f7f1e8;
+    color:#292015;
+}
+
+/* CABECERA */
+header{
+    background:linear-gradient(135deg,#8b1e1e,#c95c20);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{
+    font-size:38px;
+    letter-spacing:3px;
+}
+
+header p{
+    margin-top:8px;
+    font-size:17px;
+}
+
+/* MENU */
+nav{
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:#382014;
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    padding:10px;
+}
+
+nav button{
+    border:0;
+    background:#5d321d;
+    color:white;
+    padding:10px 16px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+nav button:hover{
+    background:#b85b24;
+}
+
+/* CONTENEDOR */
+main{
+    width:95%;
+    max-width:1100px;
+    margin:auto;
+}
+
+section{
+    padding:25px 0;
+}
+
+/* SOLIA */
+.solia{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    margin:20px 0;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    box-shadow:0 5px 15px #0002;
+}
+
+.avatar{
+    width:95px;
+    height:115px;
+    position:relative;
+    flex-shrink:0;
+}
+
+/* CABEZA DE SOLIA */
+.head{
+    position:absolute;
+    width:60px;
+    height:65px;
+    background:#d99b70;
+    border-radius:50%;
+    left:18px;
+    top:12px;
+    z-index:2;
+}
+
+.hair{
+    position:absolute;
+    width:75px;
+    height:80px;
+    background:#351c16;
+    border-radius:50% 50% 45% 45%;
+    left:10px;
+    top:4px;
+    z-index:1;
+}
+
+.body{
+    position:absolute;
+    width:80px;
+    height:55px;
+    background:#9e2630;
+    border-radius:35px 35px 15px 15px;
+    left:8px;
+    top:68px;
+}
+
+.solia h2{
+    color:#9e2630;
+    margin-bottom:5px;
+}
+
+/* TITULOS */
+h2{
+    margin-bottom:15px;
+    color:#7f241c;
+}
+
+/* MAPA */
+.departamentos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+    gap:10px;
+}
+
+.departamento{
+    background:white;
+    border:2px solid #d7b38a;
+    border-radius:12px;
+    padding:13px;
+    cursor:pointer;
+    text-align:center;
+    transition:.2s;
+}
+
+.departamento:hover,
+.departamento.activo{
+    background:#a92f24;
+    color:white;
+    transform:translateY(-2px);
+}
+
+/* BUSCADOR */
+.buscar{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.buscar input{
+    flex:1;
+    padding:14px;
+    border:2px solid #cda77a;
+    border-radius:12px;
+    font-size:16px;
+}
+
+.buscar button{
+    border:0;
+    background:#a92f24;
+    color:white;
+    padding:0 18px;
+    border-radius:12px;
+}
+
+/* DANZAS */
+.danzas{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:18px;
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 5px 15px #0002;
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.foto{
+    height:170px;
+    background:linear-gradient(135deg,#a92f24,#e5a044);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:55px;
+}
+
+.foto img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:none;
+}
+
+.card-content{
+    padding:17px;
+}
+
+.card h3{
+    color:#8d271f;
+    margin-bottom:6px;
+}
+
+.card button{
+    margin-top:12px;
+    width:100%;
+    border:0;
+    padding:11px;
+    border-radius:10px;
+    background:#8d271f;
+    color:white;
+    cursor:pointer;
+}
+
+/* DETALLE */
+#detalle{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    margin:25px 0;
+    box-shadow:0 5px 15px #0002;
+}
+
+#detalle h2{
+    font-size:30px;
+}
+
+.info{
+    margin:15px 0;
+}
+
+.info strong{
+    color:#8d271f;
+}
+
+.volver{
+    border:0;
+    padding:10px 16px;
+    background:#382014;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* PIE */
+footer{
+    background:#382014;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:30px;
+}
+
+/* CELULAR */
+@media(max-width:600px){
+
+    header h1{
+        font-size:30px;
+    }
+
+    nav{
+        overflow-x:auto;
+        justify-content:flex-start;
+    }
+
+    .solia{
+        align-items:flex-start;
+    }
+
+    .buscar{
+        flex-direction:column;
+    }
+
+    .buscar button{
+        padding:12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>WIÑAY TUSUY 🇵🇪</h1>
+    <p>Danzas que perduran, raíces que viven</p>
+</header>
+
+<nav>
+    <button onclick="ir('inicio')">Inicio</button>
+    <button onclick="ir('mapa')">Mapa cultural</button>
+    <button onclick="ir('buscar')">Buscar</button>
+</nav>
+
+<main>
+
+<section id="inicio">
+
+    <div class="solia">
+
+        <div class="avatar">
+            <div class="hair"></div>
+            <div class="head"></div>
+            <div class="body"></div>
+        </div>
+
+        <div>
+            <h2>Hola, soy SOLIA 👩🏻</h2>
+            <p>
+                Soy tu guía virtual por las danzas tradicionales
+                del Perú. Selecciona un departamento y descubre
+                sus costumbres, música, vestimenta e historia.
+            </p>
+        </div>
+
+    </div>
+
+    <h2>🇵🇪 Descubre las danzas del Perú</h2>
+
+    <p>
+        Perú posee una enorme diversidad cultural. Sus danzas
+        representan la historia, las tradiciones y la identidad
+        de sus pueblos.
+    </p>
+
+</section>
+
+<section id="mapa">
+
+    <h2>🗺️ Mapa cultural del Perú</h2>
+
+    <p style="margin-bottom:15px">
+        Selecciona un departamento:
+    </p>
+
+    <div class="departamentos" id="departamentos"></div>
+
+</section>
+
+<section id="buscar">
+
+    <h2>🔎 Buscar una danza</h2>
+
+    <div class="buscar">
+        <input
+            type="text"
+            id="buscador"
+            placeholder="Ej
